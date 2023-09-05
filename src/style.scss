@@ -1,0 +1,105 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+$bg: #090a0f;
+$font: #f5f5f7;
+$link: #2997fe;
+
+@mixin el-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin el-text {
+    font-size: 21px;
+    font-weight: lighter;
+    line-height: 1.6;
+}
+
+body {
+    margin: auto;
+    background-color: $bg;
+}
+
+.container {
+    .card {
+        font-family: "SF Pro Display", sans-serif;
+        background-color: $bg;
+        margin: auto;
+        width: 100%;
+
+        .card__logo {
+            @include el-center;
+            padding-top: 68px;
+            padding-bottom: 24px;
+        }
+
+        .card__description {
+            @include el-center;
+            @include el-text;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            color: $font;
+        }
+
+        .card__link {
+            @include el-center;
+
+            .link_list {
+                list-style: none;
+            }
+
+            .link_list li {
+                @include el-text;
+                display: inline-block;
+                padding: 0 20px 0 20px;
+            }
+            .link_list li:first-child {
+                margin-left: -48px;
+            }
+
+            .link_list li:last-child {
+                margin-right: 0;
+            }
+
+            .link_list a {
+                text-decoration: none;
+                display: flex;
+                color: $link;
+            }
+
+            .link_list a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .sup-text {
+        font-size: 12px;
+    }
+
+    .movies {
+        overflow: hidden;
+        padding: 5px 0 18px 0;
+
+        .movies__top {
+            margin-top: 14px;
+            display: flex;
+        }
+
+        .movies__top___animate {
+            transform: translate(-260%);
+            transition-duration: 12s;
+            transition-timing-function: linear;
+        }
+
+        .movies__card {
+            width: 380px;
+            height: auto;
+            border-radius: 6px;
+            margin: 0 5px 0 5px;
+        }
+
+    }
+}
